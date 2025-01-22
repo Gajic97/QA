@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-22T20:22:34.890Z",
+    "end": "2025-01-22T20:23:08.629Z",
+    "duration": 33739,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "35cc94c2-5b78-4969-b577-e5b1e2c3a80f",
+      "title": "",
+      "fullFile": "C:\\selenium_automation\\GajicQA\\test\\index.js",
+      "file": "\\test\\index.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cdc9384c-b612-499e-961c-7f4c2e1dc1a1",
+          "title": "FunctionalTesting",
+          "fullFile": "C:\\selenium_automation\\GajicQA\\test\\index.js",
+          "file": "\\test\\index.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Tc001 - Testing successfuly login ",
+              "fullTitle": "FunctionalTesting Tc001 - Testing successfuly login ",
+              "timedOut": null,
+              "duration": 7478,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\".././mochawesome-report/images/images1737577362587.png\"",
+              "code": "let driver = await new Builder().forBrowser(Browser.FIREFOX).build();\ntry {\n    //Login\n    await loginFunction(driver);\n    //Take screenshot for evidence\n    var filename = await takeScreenshot(driver);\n    moreDetails(this, \"../\"+filename);\n} catch (error) {\n    console.log(\"Tc001 Error\");\n    moreDetails(this, \"Error with test\");\n} finally {\n    driver.quit();\n}",
+              "err": {},
+              "uuid": "9231c49f-4d40-4c74-b7f2-eeba562df2ec",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tc002 - Testing unsuccessful login",
+              "fullTitle": "FunctionalTesting Tc002 - Testing unsuccessful login",
+              "timedOut": null,
+              "duration": 4603,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\".././mochawesome-report/images/images1737577367189.png\"",
+              "code": "let driver = await new Builder().forBrowser(Browser.FIREFOX).build();\ntry {\n    //Bad login credentials\n    await badLoginCred(driver);\n    //Check if the login error is as it's supposed to be\n    const actualText = await driver.findElement(By.xpath(\"//h3[normalize-space()='Your Login Name or Password is invalid']\")).getText();\n    actualText.should.equal(\"Your Login Name or Password is invalid\");\n    //Take screenshot for evidence\n    var filename = await takeScreenshot(driver);\n    moreDetails(this, \"../\"+filename);\n} catch (error) {\n    console.log(\"Tc002 error\");\n    moreDetails(this, \"Error with test\");\n} finally {\n    driver.quit();\n}",
+              "err": {},
+              "uuid": "994bae5d-6205-40b6-b81e-aeaeb5671a11",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tc003 - Check for view book details",
+              "fullTitle": "FunctionalTesting Tc003 - Check for view book details",
+              "timedOut": null,
+              "duration": 6625,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\".././mochawesome-report/images/images1737577373818.png\"",
+              "code": "let driver = await new Builder().forBrowser(Browser.FIREFOX).build();\ntry {\n    await loginFunction(driver);\n    await driver.findElement(By.xpath(\"//a[@id='Details_6']\")).click();\n    const currentBookText = await driver.findElement(By.xpath(\"//h4[@class='list-group-item-heading']\")).getText();\n    currentBookText.should.equal(\"Comprehensive Testing\");\n    var filename = await takeScreenshot(driver);\n    moreDetails(this, \"../\"+filename);\n} catch (error) {\n    console.log(\"Tc003 error\");\n    moreDetails(this, \"Error with test\");\n} finally {\n    driver.quit();\n}",
+              "err": {},
+              "uuid": "b72b85ce-9723-408b-b4ea-e78bde87ee86",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tc004 - Verify add to cart functionality",
+              "fullTitle": "FunctionalTesting Tc004 - Verify add to cart functionality",
+              "timedOut": null,
+              "duration": 7686,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\".././mochawesome-report/images/images1737577381507.png\"",
+              "code": "let driver = await new Builder().forBrowser(Browser.FIREFOX).build();\ntry {\n    //Login\n    await loginFunction(driver);\n    //Add product to cart\n    await driver.findElement(By.xpath(\"//a[@id='AddToCart_6']\")).click();\n    //Verify it thas added it to cart\n    const currentProduct = await driver.findElement(By.xpath(\"//td[normalize-space()='Comprehensive Testing']\")).getText();\n    currentProduct.should.equal(\"Comprehensive Testing\");\n    //Take screenshot\n    var filename = await takeScreenshot(driver);\n    moreDetails(this, \"../\"+filename);\n} catch (error) {\n    console.log(\"Tc003 error\");\n    moreDetails(this, \"Error with test\");\n} finally {\n    driver.quit();\n}",
+              "err": {},
+              "uuid": "7d669684-5766-47ba-8e83-97b2b78efb18",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tc005 - Verify that quantity can be updated and that the money is changed accordingly",
+              "fullTitle": "FunctionalTesting Tc005 - Verify that quantity can be updated and that the money is changed accordingly",
+              "timedOut": null,
+              "duration": 7105,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  \".././mochawesome-report/images/images1737577388108.png\",\n  \"After increasing value by one both amount of product and price is increased\",\n  \".././mochawesome-report/images/images1737577388612.png\"\n]",
+              "code": "let driver = await new Builder().forBrowser(Browser.FIREFOX).build();\ntry {\n    //Login\n    await loginFunction(driver);\n    //Add product to cart\n    await driver.findElement(By.xpath(\"//a[@id='AddToCart_6']\")).click();\n    //Take screenshot\n    var filename = await takeScreenshot(driver);\n    moreDetails(this, \"../\"+filename);\n    //Find the input and retrieve the value\n    let currentValue = await driver.findElement(By.xpath(\"//input[@value='1']\"));   \n    let value = await currentValue.getAttribute('value');\n    //Change value by 1\n    let newValue = parseInt(value, 10) + 1;     \n    await currentValue.clear();\n    await currentValue.sendKeys(newValue.toString());\n    //Click anywhere so the value updates\n    await driver.findElement(By.xpath(\"//td[normalize-space()='Comprehensive Testing']\")).click();\n    // Check if money has increased\n    let currentMoneyAmount = await driver.findElement(By.xpath(\"//strong[1]\")).getText();\n    currentMoneyAmount.should.equal(\"Total $198 USD\");\n    //Take screenshot\n    moreDetails(this, \"After increasing value by one both amount of product and price is increased\");\n    var filename = await takeScreenshot(driver);\n    moreDetails(this, \"../\"+filename);\n} catch (error) {\n    console.log(\"Tc003 error\");\n    moreDetails(this, \"Error with test\");\n} finally {\n    driver.quit();\n}",
+              "err": {},
+              "uuid": "233e5317-fa3c-4e53-b127-c9eedbc08bd0",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9231c49f-4d40-4c74-b7f2-eeba562df2ec",
+            "994bae5d-6205-40b6-b81e-aeaeb5671a11",
+            "b72b85ce-9723-408b-b4ea-e78bde87ee86",
+            "7d669684-5766-47ba-8e83-97b2b78efb18",
+            "233e5317-fa3c-4e53-b127-c9eedbc08bd0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 33497,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
